@@ -1,15 +1,49 @@
 config:
   target: "https://api.todoist.com"
   phases:
-    - duration: 3
+    - duration: 1
       arrivalRate: 1
       name: "Phase 1"
+    - duration: 2
+      arrivalRate: 1
+      name: "Phase 2"
+    - duration: 3
+      arrivalRate: 1
+      name: "Phase 3"
   defaults:
     headers:
-      Authorization: Bearer{{ processEnvironment.TOKEN }}
+      Authorization: "Bearer {{ $processEnvironment.TOKEN }}"
       Content-Type: application/json
   #processor: "./myProcessor.js"
 scenarios:
   - flow:
-      - get:
-          url: "/rest/v1/tasks"
+    - log: "Bearer {{ $processEnvironment.TOKEN }}"
+    - get:
+        url: "/rest/v1/tasks"
+        qs: 
+          project_id: "{{ $processEnvironment.ID_PROJECT }}"
+    - post:
+        url: "/rest/v1/tasks"
+        json: 
+          content: "new task"
+          project_id: 2261254215
+        capture: 
+          json: "$.id"
+          as: "idTask"
+    - get:
+        url: "/rest/v1/tasks/{{ idTask }}"
+    - post:
+        url: "/rest/v1/tasks/{{ idTask }}"
+        json: 
+          content: "update task"
+          priority: 2
+    - post:
+        url: "/rest/v1/tasks/{{ idTask }}/close"  
+    - post:
+        url: "/rest/v1/tasks/{{ idTask }}/reopen"   
+    - delete:
+        url: "/rest/v1/tasks/{{ idTask }}"      
+        
+      
+
+        
