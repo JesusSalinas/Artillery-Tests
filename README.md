@@ -6,11 +6,11 @@ Develop and test all the bullets defined from GDL_FullStack QA Certificaition_Ho
 
 ## Setting the project
 
-Clone the repository: `` https://github.com/JesusSalinas/Backend-API-Tests.git `` and install: 
+Clone the repository: `` https://github.com/JesusSalinas/Artillery-Tests.git `` and install: 
 
-    -  npm install newman
+    -  npm install faker
     -  npm install dotenv 
-    -  npm install newman-reporter-htmlextra
+    -  npm install aritillery
 
 ## Run the project 
 
