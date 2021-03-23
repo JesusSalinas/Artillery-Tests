@@ -14,10 +14,10 @@ config:
     headers:
       Authorization: "Bearer {{ $processEnvironment.TOKEN }}"
       Content-Type: application/json
-  #processor: "./myProcessor.js"
+  processor: "./scripts/scripts.js"
 scenarios:
   - flow:
-    - log: "Bearer {{ $processEnvironment.TOKEN }}"
+    - function: generateTestData
     - get:
         url: "/rest/v1/tasks"
         qs: 
@@ -25,7 +25,8 @@ scenarios:
     - post:
         url: "/rest/v1/tasks"
         json: 
-          content: "new task"
+          content: "{{ content }}"
+          priority: "{{ priority }}"
           project_id: 2261254215
         capture: 
           json: "$.id"
@@ -35,15 +36,11 @@ scenarios:
     - post:
         url: "/rest/v1/tasks/{{ idTask }}"
         json: 
-          content: "update task"
-          priority: 2
+          content: "{{ updateContent }}"
+          priority: "{{ updatePriority }}"
     - post:
         url: "/rest/v1/tasks/{{ idTask }}/close"  
     - post:
         url: "/rest/v1/tasks/{{ idTask }}/reopen"   
     - delete:
         url: "/rest/v1/tasks/{{ idTask }}"      
-        
-      
-
-        

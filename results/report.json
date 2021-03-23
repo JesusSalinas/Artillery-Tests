@@ -1,33 +1,34 @@
 {
   "aggregate": {
-    "timestamp": "2021-03-23T00:34:50.745Z",
-    "scenariosCreated": 1,
-    "scenariosCompleted": 1,
-    "requestsCompleted": 1,
+    "timestamp": "2021-03-23T03:21:35.309Z",
+    "scenariosCreated": 6,
+    "scenariosCompleted": 6,
+    "requestsCompleted": 42,
     "latency": {
-      "min": 211.1,
-      "max": 211.1,
-      "median": 211.1,
-      "p95": 211.1,
-      "p99": 211.1
+      "min": 65.1,
+      "max": 763.9,
+      "median": 357.7,
+      "p95": 667.2,
+      "p99": 763.9
     },
     "rps": {
-      "count": 1,
-      "mean": 2.27
+      "count": 42,
+      "mean": 5.61
     },
     "scenarioDuration": {
-      "min": 279,
-      "max": 279,
-      "median": 279,
-      "p95": 279,
-      "p99": 279
+      "min": 2240.8,
+      "max": 3211.1,
+      "median": 2460.1,
+      "p95": 3211.1,
+      "p99": 3211.1
     },
     "scenarioCounts": {
-      "0": 1
+      "0": 6
     },
     "errors": {},
     "codes": {
-      "400": 1
+      "200": 18,
+      "204": 24
     },
     "matches": 0,
     "customStats": {},
@@ -38,43 +39,95 @@
         "duration": 1,
         "arrivalRate": 1,
         "name": "Phase 1"
+      },
+      {
+        "duration": 2,
+        "arrivalRate": 1,
+        "name": "Phase 2"
+      },
+      {
+        "duration": 3,
+        "arrivalRate": 1,
+        "name": "Phase 3"
       }
     ]
   },
   "intermediate": [
     {
-      "timestamp": "2021-03-23T00:34:50.742Z",
-      "scenariosCreated": 1,
-      "scenariosCompleted": 1,
-      "requestsCompleted": 1,
+      "timestamp": "2021-03-23T03:21:35.307Z",
+      "scenariosCreated": 6,
+      "scenariosCompleted": 6,
+      "requestsCompleted": 42,
       "latency": {
-        "min": 211.1,
-        "max": 211.1,
-        "median": 211.1,
-        "p95": 211.1,
-        "p99": 211.1
+        "min": 65.1,
+        "max": 763.9,
+        "median": 357.7,
+        "p95": 667.2,
+        "p99": 763.9
       },
       "rps": {
-        "count": 1,
-        "mean": 2.27
+        "count": 42,
+        "mean": 5.61
       },
       "scenarioDuration": {
-        "min": 279,
-        "max": 279,
-        "median": 279,
-        "p95": 279,
-        "p99": 279
+        "min": 2240.8,
+        "max": 3211.1,
+        "median": 2460.1,
+        "p95": 3211.1,
+        "p99": 3211.1
       },
       "scenarioCounts": {
-        "0": 1
+        "0": 6
       },
       "errors": {},
       "codes": {
-        "400": 1
+        "200": 18,
+        "204": 24
       },
       "matches": 0,
       "latencies": [
-        211129690
+        325558456,
+        328396758,
+        271632084,
+        231314510,
+        338580595,
+        366381777,
+        210156118,
+        518349988,
+        281172662,
+        316239559,
+        472734689,
+        763939488,
+        414556886,
+        193950698,
+        439191639,
+        97191486,
+        588475327,
+        346306744,
+        370620506,
+        65121493,
+        635264721,
+        309570914,
+        86746327,
+        530930595,
+        409112579,
+        302351895,
+        65877552,
+        632520516,
+        408496525,
+        715131919,
+        349066934,
+        199923646,
+        502807433,
+        556786517,
+        462925623,
+        178228276,
+        529201155,
+        177429261,
+        322774889,
+        459447464,
+        470103124,
+        371261785
       ],
       "customStats": {},
       "counters": {},
